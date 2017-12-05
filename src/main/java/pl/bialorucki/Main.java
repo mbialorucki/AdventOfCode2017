@@ -80,7 +80,9 @@ public class Main {
             e.printStackTrace();
         }
         int result = MazeOfTwistyTrampolines.jump(maze.stream().mapToInt(Integer::valueOf).toArray());
+        int resultWithDecrease = MazeOfTwistyTrampolines.jumpWithDecrease(maze.stream().mapToInt(Integer::valueOf).toArray());
         System.out.println(result);
+        System.out.println(resultWithDecrease);
         //endregion
     }
 }

@@ -18,4 +18,20 @@ public class MazeOfTwistyTrampolines {
         return numberOfJumps;
     }
 
+    public static int jumpWithDecrease(int[] listOfJumps){
+        int step = 0;
+        int numberOfJumps = 0;
+        int nextStep = 0;
+        while(step >= 0 && step < listOfJumps.length){
+            nextStep = listOfJumps[step];
+            if(nextStep >= 3)
+                listOfJumps[step]--;
+            else
+                listOfJumps[step]++;
+            step += nextStep;
+            numberOfJumps++;
+        }
+        return numberOfJumps;
+    }
+
 }
