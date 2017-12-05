@@ -3,6 +3,9 @@ package pl.bialorucki;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -56,15 +59,28 @@ public class Main {
         //region Day4 - High-Entropy Passphrases
         int numberOfValidPassPhrases = 0;
         try {
-            for(String line : Files.readAllLines(Paths.get("passphrases"))){
+            for(String line : Files.readAllLines(Paths.get("src/main/resources/passphrases"))){
                 if(HighEntropyPassphrases.check(line)){
                     numberOfValidPassPhrases++;
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }
+            }
         System.out.println(numberOfValidPassPhrases);
+        //endregion
+        //region Day5 - A Maze of Twisty Trampolines, All Alike
+        List<Integer> maze = new ArrayList<>();
+        try {
+            for(String line : Files.readAllLines(Paths.get("src/main/resources/maze"))){
+               int number = Integer.parseInt(line);
+               maze.add(number);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int result = MazeOfTwistyTrampolines.jump(maze.stream().mapToInt(Integer::valueOf).toArray());
+        System.out.println(result);
         //endregion
     }
 }
