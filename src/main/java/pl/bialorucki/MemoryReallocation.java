@@ -21,6 +21,18 @@ public class MemoryReallocation {
         }
     }
 
+    public static int countCycles(List<Integer> memoryBank){
+        List<List<Integer>> seenedBlocks = new ArrayList<>();
+
+        seenedBlocks.add(new ArrayList<>(memoryBank));
+        while(true){
+            redistribute(memoryBank);
+            if(seenedBlocks.contains(memoryBank)) {
+                return seenedBlocks.size() - seenedBlocks.indexOf(memoryBank);
+            }
+            seenedBlocks.add(new ArrayList<>(memoryBank));
+        }
+    }
     public static List<Integer> redistribute(List<Integer> memoryBank) {
         if(memoryBank.isEmpty())
             return new ArrayList<>();

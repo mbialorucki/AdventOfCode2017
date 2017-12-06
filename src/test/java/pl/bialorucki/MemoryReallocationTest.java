@@ -47,4 +47,10 @@ class MemoryReallocationTest {
         assertEquals(5,MemoryReallocation.detect(testList));
     }
 
+    @Test
+    public void countCycles_should_return_4_for_sample_data(){
+        List<Integer> testList = Arrays.asList(2,4,1,2);
+        assertEquals(4,MemoryReallocation.countCycles(testList));
+    }
+
 }
