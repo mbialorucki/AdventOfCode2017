@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -84,5 +85,12 @@ public class Main {
         System.out.println(result);
         System.out.println(resultWithDecrease);
         //endregion
+        //region Day6 - Memory Reallocation
+        List<Integer> memoryBank = Arrays.asList(5,1,10,0,1,7,13,14,3,12,8,10,7,12,0,6);
+        System.out.println(MemoryReallocation.detect(memoryBank));
+        //endregion
+
     }
+
+
 }
