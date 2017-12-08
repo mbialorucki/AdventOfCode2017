@@ -94,7 +94,7 @@ public class Main {
         System.out.println(RecursiveCircus.findNameUsingLists("src/main/resources/programs"));
         //endregion
         //region Day 8 - I Heard You Like Registers
-        System.out.println(Registers.findMaxRegisterValue("src/main/resources/registers"));
+        System.out.println(Arrays.toString(Registers.findMaxRegisterValue("src/main/resources/registers")));
         //endregion
 
 

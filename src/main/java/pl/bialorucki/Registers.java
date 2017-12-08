@@ -15,15 +15,18 @@ public class Registers {
 
     private static Map<String, Integer> registers;
     private static List<String> fileContent;
+    private static int max;
 
-    public static int findMaxRegisterValue(String fileName) {
+    public static int[] findMaxRegisterValue(String fileName) {
         registers = new HashMap<>();
         readFileContent(fileName);
         initializeRegisters();
+        max = 0;
+
         for (String line : fileContent) {
             processLine(line);
         }
-        return registers.values().stream().max(Comparator.naturalOrder()).get();
+        return new int[]{registers.values().stream().max(Comparator.naturalOrder()).get(),max};
     }
 
     private static void processLine(String line) {
@@ -49,6 +52,10 @@ public class Registers {
             case "dec":
                 registers.put(register,registers.get(register)-Integer.parseInt(operationValue));
                 break;
+        }
+
+        if(registers.get(register) > max){
+            max = registers.get(register);
         }
     }
 
@@ -83,7 +90,6 @@ public class Registers {
     private static void readFileContent(String fileName) {
         try {
             fileContent = Files.readAllLines(Paths.get(fileName));
-
         } catch (IOException e1) {
             e1.printStackTrace();
         }
