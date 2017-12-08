@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -92,6 +93,11 @@ public class Main {
         //region Day 7 - Recursive circus
         System.out.println(RecursiveCircus.findNameUsingLists("src/main/resources/programs"));
         //endregion
+        //region Day 8 - I Heard You Like Registers
+        System.out.println(Registers.findMaxRegisterValue("src/main/resources/registers"));
+        //endregion
+
+
 
     }
 
