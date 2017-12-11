@@ -1,8 +1,5 @@
 package pl.bialorucki;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +16,7 @@ public class Registers {
 
     public static int[] findMaxRegisterValue(String fileName) {
         registers = new HashMap<>();
-        readFileContent(fileName);
+        fileContent = Utils.readFileContent(fileName);
         initializeRegisters();
         max = 0;
 
@@ -84,14 +81,6 @@ public class Registers {
         for (String line : fileContent) {
             String register = line.substring(0, line.indexOf(" "));
             registers.put(register, 0);
-        }
-    }
-
-    private static void readFileContent(String fileName) {
-        try {
-            fileContent = Files.readAllLines(Paths.get(fileName));
-        } catch (IOException e1) {
-            e1.printStackTrace();
         }
     }
 
