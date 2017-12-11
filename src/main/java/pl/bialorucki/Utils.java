@@ -17,4 +17,7 @@ public class Utils {
         return fileContent;
     }
 
+    public static boolean isNullOrEmpty(String line) {
+        return line == null || line.isEmpty() || line.equals("");
+    }
 }
