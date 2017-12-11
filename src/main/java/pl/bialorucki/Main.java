@@ -96,7 +96,9 @@ public class Main {
         //region Day 8 - I Heard You Like Registers
         System.out.println(Arrays.toString(Registers.findMaxRegisterValue("src/main/resources/registers")));
         //endregion
-
+        //region Day 9: Stream Processing
+        System.out.println(StreamProcessing.countGroups("src/main/resources/stream_processing"));
+        //endregion
 
 
     }
