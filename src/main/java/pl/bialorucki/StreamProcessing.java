@@ -2,6 +2,8 @@ package pl.bialorucki;
 
 import java.util.List;
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * --- Day 9: Stream Processing ---
@@ -36,6 +38,23 @@ public class StreamProcessing {
             }
         }
         return count;
+    }
+
+
+    public static int countCharacters(String fileName){
+        List<String> input = Utils.readFileContent(fileName);
+
+        String data = input.get(0);
+        data = data.replaceAll(CANCEL_REGEX,"");
+
+        Pattern pattern = Pattern.compile(GARBAGE_REGEX);
+        Matcher matcher = pattern.matcher(data);
+        int garbageSize = 0;
+        while(matcher.find()){
+            garbageSize += matcher.group(0).length() - 2;
+        }
+
+        return garbageSize;
     }
 
 }

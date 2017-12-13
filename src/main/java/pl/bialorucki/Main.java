@@ -98,8 +98,12 @@ public class Main {
         //endregion
         //region Day 9: Stream Processing
         System.out.println(StreamProcessing.countGroups("src/main/resources/stream_processing"));
-        //endregion
+        System.out.println(StreamProcessing.countCharacters("src/main/resources/stream_processing"));
 
+        //endregion
+        //region Day 12 : Digital Plumber
+        System.out.println(DigitalPlumber.find("src/main/resources/plumber"));
+        //endregion
 
     }
 
