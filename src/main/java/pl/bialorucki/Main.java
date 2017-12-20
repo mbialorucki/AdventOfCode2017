@@ -101,10 +101,16 @@ public class Main {
         System.out.println(StreamProcessing.countCharacters("src/main/resources/stream_processing"));
 
         //endregion
+        //region Day 10 : Knot Hash
+        List<Integer> input = Arrays.asList(227,169,3,166,246,201,0,47,1,255,2,254,96,3,97,144);
+        System.out.println(KnotHash.countSum(input));
+        //endregion
         //region Day 12 : Digital Plumber
         System.out.println(DigitalPlumber.find("src/main/resources/plumber"));
         //endregion
-
+        //region Day 16 : Permutation Promenade
+        System.out.println(PermutationPromenade.dance(Utils.readFileContent("src/main/resources/permutation_promenade").get(0)));
+        //endregion
     }
 
 
